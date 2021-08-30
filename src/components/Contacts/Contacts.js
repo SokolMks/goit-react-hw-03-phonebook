@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import style from "./Contacts.module.css";
 
 const Contacts = ({
+  mainListContact,
   contactsList,
   onDeleteContact,
   filterContacts,
@@ -11,6 +12,9 @@ const Contacts = ({
   return (
     <div className={style.container}>
       <h2 className={style.title}>Contacts</h2>
+        {mainListContact.length === 0 ? (
+          <p>Unfortunately there are no contacts here</p>
+        ) : (
         <ul className={style.list}>
           <label className={style.label}>
             Find contacts by name:
@@ -35,7 +39,7 @@ const Contacts = ({
             </li>
           ))}
         </ul>
-
+        )}
     </div>
   );
 };

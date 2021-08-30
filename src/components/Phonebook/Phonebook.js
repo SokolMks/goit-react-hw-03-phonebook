@@ -15,7 +15,6 @@ class PhoneBook extends React.Component {
 
   onSubmitForm = (e) => {
     e.preventDefault();
-
     this.props.submitForm(this.state);
     this.formReset();
   };
